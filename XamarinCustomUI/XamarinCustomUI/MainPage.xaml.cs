@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using Xamarin.Forms;
+using XamarinCustomUI.Views;
 
 namespace XamarinCustomUI
 {
@@ -44,7 +45,7 @@ namespace XamarinCustomUI
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private  void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Item SelectedItem = CategoryList.FirstOrDefault(itm => itm.Name == ((TappedEventArgs)e).Parameter.ToString());
 
@@ -55,12 +56,14 @@ namespace XamarinCustomUI
 
                     case "Label":
                         {
+                            Navigation.PushAsync(new CustomLabelsPage());
 
                             break;
                         }
 
                     case "Entry":
                         {
+                             Navigation.PushAsync(new CustomEntryPage());
 
                             break;
                         }
