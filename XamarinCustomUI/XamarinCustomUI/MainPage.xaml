@@ -3,14 +3,50 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             mc:Ignorable="d"              
+             x:Name="MyPage" BackgroundColor="#1F1A24"
              x:Class="XamarinCustomUI.MainPage">
+    
+    <ContentPage.Content>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+        <ScrollView>
+            <FlexLayout BindableLayout.ItemsSource="{Binding CategoryList , Source={x:Reference MyPage}}"
+        Wrap="Wrap" x:Name="Taches1"
+        Direction="Row" BackgroundColor="#292929"
+        JustifyContent="Center"
+        AlignItems="Center"
+        AlignContent="Start">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Grid FlexLayout.Basis="{OnIdiom Phone='33%'}">
+                            <Frame Margin="10" Padding="0,20"
+                CornerRadius="5" BackgroundColor="White">
+                                <FlexLayout Direction="Column" AlignItems="Center">
+                                    <Image Source="{Binding Image}" WidthRequest="50" HeightRequest="50"/>
+                                    <Label Text="{Binding Name}" FontSize="Small"  LineBreakMode="TailTruncation"
+                        TextColor="Black"/>
+                                </FlexLayout>
+                                
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </ScrollView>
+        <!--<ListView  x:Name="lstView" RowHeight="60">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" BackgroundColor="Olive">
+                            <StackLayout Orientation="Vertical">
+                                <Label Text = "{Binding Name}" FontSize="24" AbsoluteLayout.LayoutBounds="0.25, 0.25, 400, 40"/>
+                            </StackLayout>
+                            <Image Source="{Binding Image}" HorizontalOptions="End" AbsoluteLayout.LayoutBounds="250.25, 0.25, 50, 50 "/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+    </ContentPage.Content>
 
 </ContentPage>
