@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace XamarinCustomUI
@@ -24,9 +21,6 @@ namespace XamarinCustomUI
         public MainPage()
         {
             InitializeComponent();
-
-           
-
         }
 
         protected override void OnAppearing()
@@ -40,17 +34,45 @@ namespace XamarinCustomUI
             CategoryList.Add(new Item { Name = "Entry", Image = "icon.png" });
 
             CategoryList.Add(new Item { Name = "Test", Image = "icon.png" });
-           
-            //lstView.ItemsSource = CategoryList;
-           // flexlayout.bi
         }
 
-        
+
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = "")
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Item SelectedItem = CategoryList.FirstOrDefault(itm => itm.Name == ((TappedEventArgs)e).Parameter.ToString());
+
+            if (SelectedItem != null)
+            {
+                switch (SelectedItem.Name)
+                {
+
+                    case "Label":
+                        {
+
+                            break;
+                        }
+
+                    case "Entry":
+                        {
+
+                            break;
+                        }
+
+                    default:
+                        break;
+
+
+
+                }
+            }
+
         }
     }
 
