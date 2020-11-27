@@ -1,7 +1,7 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using XamarinCustomUI.Controls;
 using XamarinCustomUI.iOS.CustomRendrers;
+using XamarinCustomUI.Resources;
 
 [assembly: Dependency(typeof(ThemeHelper))]
 namespace XamarinCustomUI.iOS.CustomRendrers
@@ -10,7 +10,19 @@ namespace XamarinCustomUI.iOS.CustomRendrers
     {
         public void SetAppTheme(Theme theme)
         {
-            throw new NotImplementedException();
+            if (theme == Theme.Dark)
+            {
+                if (App.AppTheme == Theme.Dark)
+                    return;
+                App.Current.Resources = new DarkTheme();
+            }
+            else
+            {
+                if (App.AppTheme != Theme.Dark)
+                    return;
+                App.Current.Resources = new LightTheme();
+            }
+            App.AppTheme = theme;
         }
     }
 }

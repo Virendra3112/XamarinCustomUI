@@ -1,6 +1,7 @@
 ﻿using Xamarin.Forms;
 using XamarinCustomUI.Controls;
 using XamarinCustomUI.Droid.CustomRenderers;
+using XamarinCustomUI.Resources;
 
 [assembly: Dependency(typeof(ThemeHelper))]
 namespace XamarinCustomUI.Droid.CustomRenderers
@@ -9,7 +10,19 @@ namespace XamarinCustomUI.Droid.CustomRenderers
     {
         public void SetAppTheme(Theme theme)
         {
-            throw new System.NotImplementedException();
+            if (theme == Theme.Dark)
+            {
+                if (App.AppTheme == Theme.Dark)
+                    return;
+                App.Current.Resources = new DarkTheme();
+            }
+            else
+            {
+                if (App.AppTheme != Theme.Dark)
+                    return;
+                App.Current.Resources = new LightTheme();
+            }
+            App.AppTheme = theme;
         }
     }
 }

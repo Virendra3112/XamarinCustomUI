@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using Xamarin.Forms;
+using XamarinCustomUI.Controls;
 using XamarinCustomUI.Views;
 
 namespace XamarinCustomUI
@@ -19,6 +20,23 @@ namespace XamarinCustomUI
             get { return _categoryList; }
             set { _categoryList = value; NotifyPropertyChanged(); }
         }
+
+        private bool setDarkMode;
+
+        public bool SetDarkMode
+        {
+            get
+            {
+                return setDarkMode;
+            }
+            set
+            {
+                setDarkMode = value;
+                NotifyPropertyChanged();
+
+                SetTheme(setDarkMode);
+            }
+        }
         public MainPage()
         {
             InitializeComponent();
@@ -34,7 +52,7 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "Entry", Image = "icon.png" });
 
-            CategoryList.Add(new Item { Name = "Test", Image = "icon.png" });
+            CategoryList.Add(new Item { Name = "Navigation Bar", Image = "icon.png" });
         }
 
 
@@ -45,7 +63,7 @@ namespace XamarinCustomUI
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private  void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Item SelectedItem = CategoryList.FirstOrDefault(itm => itm.Name == ((TappedEventArgs)e).Parameter.ToString());
 
@@ -63,7 +81,7 @@ namespace XamarinCustomUI
 
                     case "Entry":
                         {
-                             Navigation.PushAsync(new CustomEntryPage());
+                            Navigation.PushAsync(new CustomEntryPage());
 
                             break;
                         }
@@ -76,6 +94,29 @@ namespace XamarinCustomUI
                 }
             }
 
+        }
+
+
+
+        public void SetTheme(bool status)
+        {
+            Theme themeRequested;
+            if (status)
+            {
+                var backColor = (Color)Application.Current.Resources["DrawerPrimaryColor"];
+
+
+                themeRequested = Theme.Dark;
+            }
+            else
+            {
+                var backColor = (Color)Application.Current.Resources["DrawerPrimaryColor"];
+
+
+                themeRequested = Theme.Light;
+            }
+
+            DependencyService.Get<IAppTheme>().SetAppTheme(themeRequested);
         }
     }
 
