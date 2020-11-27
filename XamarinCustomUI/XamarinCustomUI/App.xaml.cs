@@ -6,6 +6,8 @@ namespace XamarinCustomUI
 {
     public partial class App : Application
     {
+        public static Theme AppTheme { get; set; }
+
         public App()
         {
             InitializeComponent();
@@ -24,5 +26,11 @@ namespace XamarinCustomUI
         protected override void OnResume()
         {
         }
+    }
+
+    public enum Theme
+    {
+        Light,
+        Dark
     }
 }

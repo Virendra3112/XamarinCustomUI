@@ -6,6 +6,6 @@
              mc:Ignorable="d"
              x:Class="XamarinCustomUI.App">
     <Application.Resources>
-
+        <ResourceDictionary Source="Resources/LightTheme.xaml" />
     </Application.Resources>
 </Application>
