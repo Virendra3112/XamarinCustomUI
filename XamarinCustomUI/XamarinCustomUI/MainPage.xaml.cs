@@ -48,11 +48,11 @@ namespace XamarinCustomUI
 
             CategoryList = new ObservableCollection<Item>();
 
-            CategoryList.Add(new Item { Name = "Label", Image = "icon.png" });
+            //CategoryList.Add(new Item { Name = "Label", Image = "icon.png" });
 
-            CategoryList.Add(new Item { Name = "Entry", Image = "icon.png" });
+            //CategoryList.Add(new Item { Name = "Entry", Image = "icon.png" });
 
-            CategoryList.Add(new Item { Name = "Navigation Bar", Image = "icon.png" });
+            CategoryList.Add(new Item { Name = "Action Bar", Image = "icon.png" });
         }
 
 
