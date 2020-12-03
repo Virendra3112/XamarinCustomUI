@@ -1,13 +1,76 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="XamarinCustomUI.Controls.CustomActionBar">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="XamarinCustomUI.Controls.CustomActionBar"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="self" FlowDirection="MatchParent" mc:Ignorable="d"
+    >
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="GridSize" x:TypeArguments="GridLength" iOS="60" Android="20"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <Grid HeightRequest="100" RowSpacing="0" ColumnSpacing="0" Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="{StaticResource GridSize}"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="50*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Image Grid.Row="0" Grid.ColumnSpan="3"
+                   HorizontalOptions="Fill" VerticalOptions="Fill"
+                   Aspect="Fill"
+                   Source="{Binding Source={x:Reference self}, Path= BackgroundImage}"/>
+
+            <Grid Grid.Row="1" Grid.ColumnSpan="3" Padding="5,0" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40"/>
+                </Grid.ColumnDefinitions>
+
+                <ContentView Grid.Column="0" Padding="10,5">
+                    <ContentView.Content>
+                        <Image Source="xamarin"
+                                x:Name="backImage" />
+                    </ContentView.Content>
+                    <ContentView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Source={x:Reference self}, Path= LeftTappedCommand}"/>
+                    </ContentView.GestureRecognizers>
+                </ContentView>
+
+                <Label Grid.Column="1"
+                       TextColor="White" MaxLines="3"
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       Text="{Binding Source={x:Reference self}, Path=Title}"/>
+
+
+                <ContentView Grid.Column="2" Padding="10,5" >
+                    <ContentView.Content>
+                        <Image Source="xamarin"
+                                 x:Name="rightImage" >
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference self}, Path= RightTappedCommand}"/>
+                            </Image.GestureRecognizers>
+
+                        </Image>
+                    </ContentView.Content>
+                </ContentView>
+            </Grid>
+
+
+        </Grid>
+    </ContentView.Content>
 </ContentView>
