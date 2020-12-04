@@ -2,14 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:control="clr-namespace:XamarinCustomUI.Controls"
              mc:Ignorable="d"
              x:Class="XamarinCustomUI.Views.CustomActionBarSample">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <control:CustomActionBar
+                Grid.Row="0"
+                Title="Custom Action Bar"
+                IsContentVisible="True"
+                BackgroundColor="#121212">
+
+                <StackLayout Grid.Row="1" BackgroundColor="Yellow">
+                    
+                </StackLayout>
+                
+            </control:CustomActionBar>
+            
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
