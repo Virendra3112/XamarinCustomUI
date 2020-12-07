@@ -29,16 +29,15 @@
             <ScrollView Grid.Row="2">
 
                 <FlexLayout BindableLayout.ItemsSource="{Binding CategoryList , Source={x:Reference MyPage}}"
-        Wrap="Wrap" x:Name="Taches1"
-        Direction="Row"
-        JustifyContent="Center"
-        AlignItems="Center" BackgroundColor="Transparent"
-        AlignContent="Start">
+                    Wrap="Wrap" x:Name="Taches1"
+                    Direction="Row"
+                    JustifyContent="Center"
+                    AlignItems="Center" BackgroundColor="Transparent"
+                    AlignContent="Start">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <Grid FlexLayout.Basis="{OnIdiom Phone='33%'}">
-                                <Frame Margin="10" Padding="0,20"
-                CornerRadius="5" BackgroundColor="{DynamicResource FrameColor}">
+                                <Frame Margin="10" Padding="0,20" CornerRadius="5" HeightRequest="80" WidthRequest="80" BackgroundColor="{DynamicResource FrameColor}">
                                     <FlexLayout Direction="Column" AlignItems="Center">
                                         <Image Source="{Binding Image}" WidthRequest="50" HeightRequest="50"/>
                                         <Label Text="{Binding Name}" TextColor="{DynamicResource TextPrimaryColor}" FontSize="Small"  
