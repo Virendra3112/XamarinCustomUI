@@ -12,9 +12,17 @@ namespace XamarinCustomUI.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomActionBarSample : ContentPage
     {
+        public Command LeftButtonCommand { get; set; }
         public CustomActionBarSample()
         {
             InitializeComponent();
+
+            LeftButtonCommand = new Command(OnLeftButtonTapped);
+        }
+
+        private void OnLeftButtonTapped(object obj)
+        {
+           // throw new NotImplementedException();
         }
     }
 }
