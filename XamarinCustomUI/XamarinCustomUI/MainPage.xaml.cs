@@ -55,7 +55,9 @@ namespace XamarinCustomUI
             CategoryList.Add(new Item { Name = "Action Bar", Image = "icon.png" });
 
             CategoryList.Add(new Item { Name = "Charts", Image = "icon.png" });
-            
+
+            CategoryList.Add(new Item { Name = "Map", Image = "icon.png" });
+
         }
 
 
@@ -99,6 +101,13 @@ namespace XamarinCustomUI
                     case "Charts":
                         {
                             Navigation.PushAsync(new SampleChartsPage());
+
+                            break;
+                        }
+
+                    case "Map":
+                        {
+                            Navigation.PushAsync(new GoogleMapSample());
 
                             break;
                         }
