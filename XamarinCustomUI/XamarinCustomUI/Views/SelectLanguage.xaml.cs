@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinCustomUI.Resources;
 
 namespace XamarinCustomUI.Views
 {
@@ -26,6 +27,9 @@ namespace XamarinCustomUI.Views
                 var language = CultureInfo.GetCultures(CultureTypes.NeutralCultures).ToList().First(es => es.EnglishName.Contains(langPicker.SelectedItem.ToString()));
                 Thread.CurrentThread.CurrentCulture = language;
 
+                AppResource.Culture = language;
+
+                App.Current.MainPage = new NavigationPage(new MainPage());
             }
         }
     }
