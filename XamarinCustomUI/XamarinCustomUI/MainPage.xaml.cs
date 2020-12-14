@@ -58,6 +58,9 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "Map", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "Mulilingual", Image = "icon.png" });
+
+
         }
 
 
@@ -108,6 +111,13 @@ namespace XamarinCustomUI
                     case "Map":
                         {
                             Navigation.PushAsync(new GoogleMapSample());
+
+                            break;
+                        }
+
+                    case "Mulilingual":
+                        {
+                            Navigation.PushAsync(new SelectLanguage());
 
                             break;
                         }
