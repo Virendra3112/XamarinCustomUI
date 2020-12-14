@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"   BackgroundColor="{DynamicResource BackgroundColor}" 
+             xmlns:resource="clr-namespace:XamarinCustomUI.Resources"
              x:Name="MyPage" NavigationPage.HasNavigationBar="False"
              x:Class="XamarinCustomUI.MainPage">
 
@@ -19,7 +20,7 @@
 
             <StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="End">
 
-                <Label Text="Dark Mode " TextColor="{DynamicResource TextPrimaryColor}" FontSize="Small" Padding="5"/>
+                <Label Text="{x:Static resource:AppResource.ThemeText}" TextColor="{DynamicResource TextPrimaryColor}" FontSize="Small" Padding="5"/>
 
                 <Switch HorizontalOptions="Start" VerticalOptions="Start" IsToggled="{Binding SetDarkMode, Source={x:Reference MyPage}}"/>
 

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +12,8 @@ namespace XamarinCustomUI
 
         public App()
         {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
+
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
