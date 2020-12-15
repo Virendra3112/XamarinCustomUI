@@ -3,23 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:control="clr-namespace:XamarinCustomUI.Controls" x:Name="page1" 
-             mc:Ignorable="d" NavigationPage.HasNavigationBar="False"
+             xmlns:control="clr-namespace:XamarinCustomUI.Controls" x:Name="self" 
+             mc:Ignorable="d" NavigationPage.HasNavigationBar="False" Background="pink"
              x:Class="XamarinCustomUI.Views.CustomActionBarSample">
     <ContentPage.Content>
         <Grid RowSpacing="0">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
 
             <control:CustomActionBar
                 Grid.Row="0"
                 Title="Custom Action Bar"
                 IsContentVisible="True"
-                LeftTappedCommand="{Binding LeftButtonCommand, Source={x:Reference page1}}"
-                BackgroundColor="#121212">
+                BackgroundColor="Red">
 
                 <StackLayout Grid.Row="1" BackgroundColor="Yellow">
                     
