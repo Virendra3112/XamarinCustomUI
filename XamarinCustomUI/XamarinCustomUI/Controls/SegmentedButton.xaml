@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinCustomUI.Controls.SegmentedButton">
+  <ContentView.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                         Orientation="Horizontal" HeightRequest="30"
+                         Padding="0" Spacing="0"
+                         Margin="-20, 0, 0, 0">
+
+            <!--<Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                       LineBreakMode="TailTruncation"
+                       Margin="0"
+                       FontFamily="{Binding Source={x:Reference self}, Path=FontFamily}"
+                       FontSize="{Binding Source={x:Reference self}, Path=FontSize}"
+                       FontAttributes="{Binding Source={x:Reference self}, Path=FontAttributes}"
+                       TextColor="{Binding Source={x:Reference self}, Path=TextColor}"
+                       Text="{Binding Source={x:Reference self}, Path=Text}"></Label>-->
+
+
+
+            <Label x:Name="LabelTab1" Text="Tab 1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" IsVisible="True" />
+
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
