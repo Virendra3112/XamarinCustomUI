@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="XamarinCustomUI.Controls.SegmentedButtonGroup">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
-</ContentView>
+<Frame xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       mc:Ignorable="d"
+       xmlns:controls="clr-namespace:XamarinCustomUI.Controls"
+       HeightRequest="40" CornerRadius="1" Padding="0"
+       HasShadow="False" x:Class="XamarinCustomUI.Controls.SegmentedButtonGroup">
+    <Frame.Content>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                 Spacing="0" Padding="0" Margin="0"
+                 IsClippedToBounds="True"
+                 x:Name="slContainer">
+        </StackLayout>
+    </Frame.Content>
+</Frame>
