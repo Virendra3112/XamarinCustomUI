@@ -4,20 +4,9 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:controls="clr-namespace:XamarinCustomUI.Controls"
-             mc:Ignorable="d"
+             mc:Ignorable="d" x:Name="self" NavigationPage.HasNavigationBar="False"
              x:Class="XamarinCustomUI.Views.CustomTabsSample">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Common/AppStyles.xaml" />
-            </ResourceDictionary.MergedDictionaries>
 
-            <Style x:Key="SegmentedButtonDefault" TargetType="controls:SegmentedButton">
-                <!--<Setter Property="FontFamily" Value="{StaticResource Lato-Bold}" />-->
-                <Setter Property="FontSize" Value="15" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions>
@@ -62,7 +51,7 @@
                 <AbsoluteLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
                     <Frame x:Name="ContractsFrame" HasShadow="False" AbsoluteLayout.LayoutBounds="1,1,1,1"
-                           AbsoluteLayout.LayoutFlags="All" BackgroundColor="{x:StaticResource White}" 
+                           AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" 
                            HorizontalOptions="Fill" VerticalOptions="Fill" CornerRadius="12" Margin="10,5,10,0" IsVisible="True" >
 
                         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Margin="0" Padding="0">
@@ -79,7 +68,7 @@
 
                     <Frame  AbsoluteLayout.LayoutBounds="0.99,0.95,50,50" AbsoluteLayout.LayoutFlags="PositionProportional"                              
                                HorizontalOptions="FillAndExpand"
-                               Padding="0" BackgroundColor="{x:StaticResource Primary}"
+                               Padding="0" BackgroundColor="White" 
                                IsClippedToBounds="True">
                         <Frame.CornerRadius>
 
@@ -106,7 +95,7 @@
 
                 <Label  x:Name="NoOrdersLabel"  Text="" Grid.Row="0" Grid.RowSpan="2"
                                 HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                               Style="{x:StaticResource LabelTitleBold}" TextColor="{x:StaticResource Primary}" IsVisible="False" />
+                                TextColor="BlueViolet" IsVisible="False" />
 
             </Grid>
 

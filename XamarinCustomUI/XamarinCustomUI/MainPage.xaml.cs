@@ -60,6 +60,7 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "Mulilingual", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "CustomTabs", Image = "icon.png" });
 
         }
 
@@ -118,6 +119,13 @@ namespace XamarinCustomUI
                     case "Mulilingual":
                         {
                             Navigation.PushAsync(new SelectLanguage());
+
+                            break;
+                        }
+
+                    case "CustomTabs":
+                        {
+                            Navigation.PushAsync(new CustomTabsSample());
 
                             break;
                         }
