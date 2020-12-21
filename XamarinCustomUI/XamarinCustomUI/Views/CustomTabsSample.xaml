@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:XamarinCustomUI.Controls"
+             mc:Ignorable="d"
+             x:Class="XamarinCustomUI.Views.CustomTabsSample">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Common/AppStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="SegmentedButtonDefault" TargetType="controls:SegmentedButton">
+                <!--<Setter Property="FontFamily" Value="{StaticResource Lato-Bold}" />-->
+                <Setter Property="FontSize" Value="15" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <controls:CustomActionBar
+                Title="Custom Tabs Page"
+                Grid.Row="0" BackgroundColor="Green"
+                 RightIcon="icon" IsContentVisible="True">
+            </controls:CustomActionBar>
+
+            <Grid
+                Grid.Row="1"
+                Padding="0"
+                RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" Padding="0,5,0,0"
+                    Grid.Row="0" BackgroundColor="Transparent">
+                    <controls:SegmentedButtonGroup
+                    x:Name="sbgTabbar" 
+                    SelectedIndex="{Binding Source={x:Reference self}, Path=SelectedTab, Mode=TwoWay}">
+                        <controls:SegmentedButtonGroup.SegmentedButtons>
+                            <controls:SegmentedButtonCollection>
+                                <controls:SegmentedButton BackgroundColor="#a57950"    TextColor="White" FontAttributes="Bold" Text="Identification" />
+                                <controls:SegmentedButton BackgroundColor="#a57950"   TextColor="White" FontAttributes="Bold" Text="Descriptive" />
+                                <controls:SegmentedButton BackgroundColor="#a57950"    TextColor="White" FontAttributes="Bold" Text="Status" />
+                                <controls:SegmentedButton BackgroundColor="#a57950"   TextColor="White" FontAttributes="Bold" Text="Calfhood" />
+                                <!--<controls:SegmentedButton BackgroundColor="#a57950" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Style="{StaticResource SegmentedButtonDefault}" TextColor="White" FontAttributes="Bold" Text="Status" />
+                                <controls:SegmentedButton BackgroundColor="#a57950" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Style="{StaticResource SegmentedButtonDefault}" TextColor="White" FontAttributes="Bold" Text="Calfhood" />-->
+
+                            </controls:SegmentedButtonCollection>
+                        </controls:SegmentedButtonGroup.SegmentedButtons>
+                    </controls:SegmentedButtonGroup>
+                </StackLayout>
+
+                <AbsoluteLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <Frame x:Name="ContractsFrame" HasShadow="False" AbsoluteLayout.LayoutBounds="1,1,1,1"
+                           AbsoluteLayout.LayoutFlags="All" BackgroundColor="{x:StaticResource White}" 
+                           HorizontalOptions="Fill" VerticalOptions="Fill" CornerRadius="12" Margin="10,5,10,0" IsVisible="True" >
+
+                        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Margin="0" Padding="0">
+
+                            <Label x:Name="LabelTab1" Text="Tab 1" HorizontalTextAlignment="Center" IsVisible="True" />
+                            <Label x:Name="LabelTab2" Text="Tab 2" IsVisible="False"/>
+                            <Label x:Name="LabelTab3" Text="Tab 3" IsVisible="False"/>
+
+
+                        </StackLayout>
+
+                    </Frame>
+
+
+                    <Frame  AbsoluteLayout.LayoutBounds="0.99,0.95,50,50" AbsoluteLayout.LayoutFlags="PositionProportional"                              
+                               HorizontalOptions="FillAndExpand"
+                               Padding="0" BackgroundColor="{x:StaticResource Primary}"
+                               IsClippedToBounds="True">
+                        <Frame.CornerRadius>
+
+                            <OnPlatform x:TypeArguments="x:Single">
+                                <On Platform="Android">80</On>
+                                <On Platform="iOS">25</On>
+                            </OnPlatform>
+                        </Frame.CornerRadius>
+
+                        <!--<Image x:Name="addicon"  HeightRequest="20" WidthRequest="20"
+                               HorizontalOptions="Center" VerticalOptions="Center" 
+                               Source="addicon" Margin="0" BackgroundColor="Transparent"                               
+                               Aspect="AspectFit">
+                            -->
+                        <!--<Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="BtnRequestNewContract_Clicked"/>
+                            </Image.GestureRecognizers>-->
+                        <!--
+                        </Image>-->
+                    </Frame>
+
+
+                </AbsoluteLayout>
+
+                <Label  x:Name="NoOrdersLabel"  Text="" Grid.Row="0" Grid.RowSpan="2"
+                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                               Style="{x:StaticResource LabelTitleBold}" TextColor="{x:StaticResource Primary}" IsVisible="False" />
+
+            </Grid>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
