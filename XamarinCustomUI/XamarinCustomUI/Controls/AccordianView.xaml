@@ -1,13 +1,70 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="XamarinCustomUI.Controls.AccordianView">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
-</ContentView>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Frame    xmlns="http://xamarin.com/schemas/2014/forms"
+          xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          x:Name="self"
+          Style="{StaticResource FrameDefault}"
+          VerticalOptions="Start"
+        x:Class="XamarinCustomUI.Controls.AccordianView">
+    <!--<Frame.Resources>
+        <ResourceDictionary Source="../Common/AppStyles.xaml" />
+    </Frame.Resources>-->
+    <StackLayout x:Name="cvContainer"   
+              Margin="10,50,10,0"
+              Padding="0"
+              HorizontalOptions="Fill"
+              IsClippedToBounds="True"
+              Spacing="0"
+              VerticalOptions="StartAndExpand">
+        <Grid x:Name="gridHeader"
+                  HeightRequest="30"
+                  IsClippedToBounds="True"
+                  IsVisible="{Binding Source={x:Reference self}, Path=IsHeaderBarVisible}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding Source={x:Reference self}, Path=ToggleCommand}" />
+            </Grid.GestureRecognizers>
+
+            <ContentView x:Name="cvHeaderContent"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2"
+                      Padding="0,0,30,0"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand">
+                <ContentView.Content>
+                    <Label BackgroundColor="Transparent"
+                              HorizontalOptions="Fill"
+                              x:Name="HeaderLabel"
+                              HorizontalTextAlignment="Start"
+                              Style="{StaticResource LabelTitle}"
+                              Text="Header"
+                              TextColor="{StaticResource Primary}"
+                              VerticalOptions="Fill"
+                              VerticalTextAlignment="Center" />
+                </ContentView.Content>
+            </ContentView>
+
+            <Image x:Name="btnToggle"
+                      Grid.Column="1"
+                      Aspect="AspectFit"
+                      BackgroundColor="Transparent"
+                      HeightRequest="15"
+                      HorizontalOptions="Center"
+                      Source="blueDownArrow.png"
+                      VerticalOptions="Center"
+                      WidthRequest="15" />
+
+        </Grid>
+
+        <ContentView x:Name="cvBodyContent" VerticalOptions="FillAndExpand">
+            <ContentView.Content>
+                <BoxView Grid.Row="1"
+                          BackgroundColor="Gray"
+                          HeightRequest="200" />
+            </ContentView.Content>
+        </ContentView>
+    </StackLayout>
+</Frame>
