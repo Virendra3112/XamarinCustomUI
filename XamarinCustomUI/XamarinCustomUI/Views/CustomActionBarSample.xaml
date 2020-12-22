@@ -8,24 +8,30 @@
              x:Class="XamarinCustomUI.Views.CustomActionBarSample">
     <ContentPage.Content>
         <Grid RowSpacing="0">
-
             <Grid.RowDefinitions>
-                <RowDefinition Height="5*"/>
-                <RowDefinition Height="5*"/>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
             <control:CustomActionBar
-                Grid.Row="0"
-                Title="Custom Action Bar"
-                IsContentVisible="True"
-                BackgroundColor="Red">
-
-                <StackLayout Grid.Row="1" BackgroundColor="Yellow">
-                    
-                </StackLayout>
-                
+                Title="Custom Action bar Title"
+                Grid.Row="0" BackgroundColor="BlueViolet"
+                 RightIcon="icon" IsContentVisible="True">
             </control:CustomActionBar>
-            
+
+            <Grid
+                Grid.Row="1"
+                Padding="0"
+                RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label Text="Add content here" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+            </Grid>
+
         </Grid>
     </ContentPage.Content>
 </ContentPage>

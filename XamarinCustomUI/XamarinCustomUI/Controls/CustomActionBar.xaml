@@ -15,7 +15,7 @@
 
     <ContentView.Content>
 
-        <Grid HeightRequest="100" RowSpacing="0" ColumnSpacing="0" Margin="0" >
+        <Grid HeightRequest="60" RowSpacing="0" ColumnSpacing="0" Margin="0" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="{StaticResource GridSize}"/>
                 <RowDefinition Height="40"/>
