@@ -6,10 +6,14 @@
              mc:Ignorable="d"
              x:Class="XamarinCustomUI.Views.CustomAccordianViewSample">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout x:Name="stackLayout"
+                                          HorizontalOptions="FillAndExpand"
+                                          Orientation="Vertical"
+                                          Spacing="10"
+                                          VerticalOptions="Fill">
+
+
+            <!--</local:AccordianView>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
