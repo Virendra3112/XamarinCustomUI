@@ -62,6 +62,10 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "CustomTabs", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "CustomAccordianView", Image = "icon.png" });
+
+            
+
         }
 
 
@@ -129,6 +133,14 @@ namespace XamarinCustomUI
 
                             break;
                         }
+
+                    case "CustomAccordianView":
+                        {
+                            Navigation.PushAsync(new CustomAccordianViewSample());
+
+                            break;
+                        }
+                        
 
                     default:
                         break;
