@@ -64,7 +64,8 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "CustomAccordianView", Image = "icon.png" });
 
-            
+            CategoryList.Add(new Item { Name = "LoginSample", Image = "icon.png" });
+
 
         }
 
@@ -137,6 +138,12 @@ namespace XamarinCustomUI
                     case "CustomAccordianView":
                         {
                             Navigation.PushAsync(new CustomAccordianViewSample());
+
+                            break;
+                        }
+                         case "LoginSample":
+                        {
+                            Navigation.PushAsync(new LoginSamples());
 
                             break;
                         }
