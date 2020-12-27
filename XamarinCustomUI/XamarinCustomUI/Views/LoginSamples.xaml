@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:custom="clr-namespace:XamarinCustomUI.Controls"
              mc:Ignorable="d" NavigationPage.HasNavigationBar="False"
               xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
-             ios:Page.UseSafeArea="true"
+             ios:Page.UseSafeArea="true" x:Name="self"
              x:Class="XamarinCustomUI.Views.LoginSamples">
     <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
         <ScrollView VerticalOptions="FillAndExpand">
@@ -28,29 +28,24 @@
                         <StackLayout  Grid.Row="1" VerticalOptions="FillAndExpand">
                         </StackLayout>
                     </Grid>
-                    <!--AbsoluteLayout.LayoutBounds=".5,.5,.90,.85" "x,y,width,height"-->
                     <Frame CornerRadius="12" HasShadow="True"  AbsoluteLayout.LayoutBounds=".5,.5,.85,.80"                   
                     AbsoluteLayout.LayoutFlags="All" VerticalOptions="CenterAndExpand" HeightRequest="500" Padding="15,0,15,0" HorizontalOptions="FillAndExpand">
                         <StackLayout HorizontalOptions="FillAndExpand" Padding="5,50,5,40" Spacing="0">
                             <Image Source="icon.png" VerticalOptions="Center" HeightRequest="70" HorizontalOptions="CenterAndExpand"></Image>
                             <StackLayout HorizontalOptions="StartAndExpand" Orientation="Vertical" Spacing="15" Padding="0">
-                                <!--<ffimageloadingsvg:SvgCachedImage WidthRequest="100" BackgroundColor="AliceBlue" HeightRequest="100" Source="verify.svg"/>-->
                                 <Label Text="Username"  Margin="0,40,0,0"                     
                        
                        HorizontalOptions="FillAndExpand" FontSize="Small"
                        VerticalOptions="FillAndExpand" TextColor="#999999" ></Label>
 
-                                <ActivityIndicator IsRunning="{Binding IsBusyy}" IsVisible="False" Color ="#951026"/>
                                 <custom:BorderLessEntry x:Name="_username" 
                                                                Placeholder="Enter Username" PlaceholderColor="#e1e3e3"
                                                                VerticalOptions="Start"                                                               
-                                                               Text="{Binding LoginEmail}"
+                                                               Text="{Binding Source={x:Reference self}, Path=LoginEmail, Mode=TwoWay}"
                                                                 FontSize="Medium"
-                                                 WidthRequest="350"
+                                                                WidthRequest="350"
                                                                HorizontalOptions="FillAndExpand">
                                 </custom:BorderLessEntry>
-                                <!--<ffimageloadingsvg:SvgCachedImage WidthRequest="6" HeightRequest="6" Source="verify.svg"/>-->
-                                <!--<Image WidthRequest="6" HeightRequest="6" Source="verify2x.png"/>-->
                             </StackLayout>
                             <BoxView WidthRequest="1" HeightRequest="1"  BackgroundColor="#e1e3e3"></BoxView>
                             <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical" Spacing="15" Padding="0">
@@ -59,16 +54,18 @@
                        
                        VerticalOptions="FillAndExpand" TextColor="#999999"></Label>
                                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"  Padding="0">
-                                    <custom:BorderLessEntry x:Name="_password" IsPassword="{Binding IsPassword}"
+                                    <custom:BorderLessEntry x:Name="_password"
+                                                              IsPassword="{Binding Source={x:Reference self}, Path=IsPassword, Mode=TwoWay}"
                                                                Placeholder="Enter Password" PlaceholderColor="#e1e3e3" 
                                                                VerticalOptions="End"
-                                                               Text="{Binding LoginPwd}" FontSize="Medium"
+                                                               Text="{Binding Source={x:Reference self}, Path=LoginPwd, Mode=TwoWay}"
+                                                                FontSize="Medium"
                                                                WidthRequest="200"
                                                                HorizontalOptions="FillAndExpand">
                                     </custom:BorderLessEntry>
                                     <Image  WidthRequest="15" HeightRequest="15" HorizontalOptions="End" Source="icon.png">
                                         <Image.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding IsPasswordCommand}"></TapGestureRecognizer>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
                                         </Image.GestureRecognizers>
                                     </Image>
                                 </StackLayout>
