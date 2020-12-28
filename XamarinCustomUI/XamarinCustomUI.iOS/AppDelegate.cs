@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using FFImageLoading;
+using FFImageLoading.Forms.Platform;
 using Foundation;
 using UIKit;
 
@@ -25,6 +26,21 @@ namespace XamarinCustomUI.iOS
             global::Xamarin.Forms.Forms.Init();
 
             Xamarin.FormsMaps.Init();
+
+
+            CachedImageRenderer.Init();
+            CachedImageRenderer.InitImageSourceHandler();
+
+
+            var config = new FFImageLoading.Config.Configuration()
+            {
+                VerboseLogging = false,
+                VerbosePerformanceLogging = false,
+                VerboseMemoryCacheLogging = false,
+                VerboseLoadingCancelledLogging = false,
+                //Logger = new CustomLogger(),
+            };
+            ImageService.Instance.Initialize(config);
 
             LoadApplication(new App());
 
