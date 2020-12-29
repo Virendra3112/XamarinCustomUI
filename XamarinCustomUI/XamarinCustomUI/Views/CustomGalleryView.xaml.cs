@@ -1,6 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using XamarinCustomUI.Models;
@@ -18,7 +19,7 @@ namespace XamarinCustomUI.Views
         }
 
 
-
+            
         private ObservableCollection<GalleryModel> _galleryList;
 
         public ObservableCollection<GalleryModel> GalleryList
@@ -26,6 +27,39 @@ namespace XamarinCustomUI.Views
             get { return _galleryList; }
             set { _galleryList = value; NotifyPropertyChanged(); }
         }
+
+        private bool _isLongPressed;
+        public bool IsLongPressed
+        {
+            get
+            {
+                return _isLongPressed;
+            }
+            set
+            {
+                _isLongPressed = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+        private bool _isImageChecked;
+        public bool IsImageChecked
+        {
+            get
+            {
+                return _isImageChecked;
+            }
+            set
+            {
+                _isImageChecked = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
+        public ICommand OnLongPressedCommand { get; set; }
+
+        public ICommand ImageClickedCommand { get; set; }
 
         public CustomGalleryView()
         {
@@ -36,6 +70,20 @@ namespace XamarinCustomUI.Views
         {
             base.OnAppearing();
             GalleryList = new ObservableCollection<GalleryModel>();
+
+            ImageClickedCommand = new Command(OnImageClicked);
+            OnLongPressedCommand = new Command(OnLongPressed);
+
+        }
+
+        private void OnLongPressed(object obj)
+        {
+            //throw new NotImplementedException();
+        }
+
+        private void OnImageClicked(object obj)
+        {
+            //throw new NotImplementedException();
         }
     }
 }

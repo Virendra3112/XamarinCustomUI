@@ -66,6 +66,8 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "LoginSample", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "GalleryView", Image = "icon.png" });
+
 
         }
 
@@ -144,6 +146,11 @@ namespace XamarinCustomUI
                          case "LoginSample":
                         {
                             Navigation.PushAsync(new LoginSamples());
+
+                            break;
+                        } case "GalleryView":
+                        {
+                            Navigation.PushAsync(new CustomGalleryView());
 
                             break;
                         }
