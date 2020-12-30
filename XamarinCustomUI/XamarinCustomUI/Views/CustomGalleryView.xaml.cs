@@ -19,7 +19,7 @@ namespace XamarinCustomUI.Views
         }
 
 
-            
+
         private ObservableCollection<GalleryModel> _galleryList;
 
         public ObservableCollection<GalleryModel> GalleryList
@@ -57,13 +57,20 @@ namespace XamarinCustomUI.Views
         }
 
 
-        public ICommand OnLongPressedCommand { get; set; }
+        public Command OnLongPressedCommand { get; set; }
 
-        public ICommand ImageClickedCommand { get; set; }
+        public Command ImageClickedCommand { get; set; }
 
         public CustomGalleryView()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         protected override void OnAppearing()
@@ -74,16 +81,34 @@ namespace XamarinCustomUI.Views
             ImageClickedCommand = new Command(OnImageClicked);
             OnLongPressedCommand = new Command(OnLongPressed);
 
+            GetData();
+        }
+
+        private void GetData()
+        {
+            IsLongPressed = false;
+            IsImageChecked = false;
+            GalleryList.Add(new GalleryModel { ImageId = 1, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
+            GalleryList.Add(new GalleryModel { ImageId = 2, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
+            GalleryList.Add(new GalleryModel { ImageId = 3, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
+            GalleryList.Add(new GalleryModel { ImageId = 4, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
+            GalleryList.Add(new GalleryModel { ImageId = 5, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
+            GalleryList.Add(new GalleryModel { ImageId = 6, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
+            GalleryList.Add(new GalleryModel { ImageId = 7, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
+
         }
 
         private void OnLongPressed(object obj)
         {
-            //throw new NotImplementedException();
+            IsLongPressed = true;
+            IsImageChecked = false;
+
         }
 
         private void OnImageClicked(object obj)
         {
-            //throw new NotImplementedException();
+            IsLongPressed = false;
+            IsImageChecked = true;
         }
     }
 }

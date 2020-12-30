@@ -75,6 +75,8 @@
   <ItemGroup>
     <Compile Include="CustomRenderers\BorderLessEntryRenderer.cs" />
     <Compile Include="CustomRenderers\ThemeHelper.cs" />
+    <Compile Include="Effects\AndroidLongPressedEffect.cs" />
+    <Compile Include="Effects\AndroidSingleClickEffect.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
