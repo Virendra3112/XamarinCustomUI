@@ -7,21 +7,27 @@
              xmlns:ffImage="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ffImageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-             xmlns:effects="clr-namespace:XamarinCustomUI.Effects"              
+             xmlns:effects="clr-namespace:XamarinCustomUI.Effects"         
+             Title="Sample Gallery"    
              x:Class="XamarinCustomUI.Views.CustomGalleryView">
     <ContentPage.Content>
 
 
         <ScrollView Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                 FlexLayout.Basis="{OnIdiom Phone='50%' }" FlexLayout.AlignSelf="Start">
-            <FlexLayout Grid.Row="1" BackgroundColor="Transparent" BindableLayout.ItemsSource="{Binding GalleryList, Mode=TwoWay, Source={x:Reference self}}"
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="close" WidthRequest="50" HeightRequest="50" HorizontalOptions="Start" />
+                    <Image Source="delete" WidthRequest="50" HeightRequest="50" HorizontalOptions="EndAndExpand" />
+                </StackLayout>
+                <FlexLayout Grid.Row="1" BackgroundColor="Transparent" BindableLayout.ItemsSource="{Binding GalleryList, Mode=TwoWay, Source={x:Reference self}}"
                      Padding="0" Margin="10,0"
                     Wrap="Wrap" Direction="Row" JustifyContent="Center" AlignContent="Center" AlignItems="Center">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate>
                         <Grid FlexLayout.Basis="{OnIdiom Phone='33%'}">
-                            <!--<Frame VerticalOptions="Start" HasShadow="True" BorderColor="#BB7549"
-                                   Margin="10" Padding="0,20" CornerRadius="5" HeightRequest="80" WidthRequest="80" BackgroundColor="{DynamicResource FrameColor}">-->
+                            <Frame VerticalOptions="Start" HasShadow="True" BorderColor="#BB7549"
+                                   Margin="10" Padding="0,20" CornerRadius="5" HeightRequest="80" WidthRequest="80" BackgroundColor="Black">
                                 <FlexLayout Direction="Column" JustifyContent="Center" >
                                     <CheckBox IsVisible="{Binding IsLongPressed, Mode=TwoWay, Source={x:Reference self}}" 
                         IsChecked="{Binding IsSelected}"
@@ -45,7 +51,7 @@
                                         </ffImage:CachedImage.Effects>
                                     </ffImage:CachedImage>
                                 </FlexLayout>
-                            <!--</Frame>-->
+                            </Frame>
                         </Grid>
 
                     </DataTemplate>
@@ -54,6 +60,7 @@
 
 
             </FlexLayout>
+            </StackLayout>
         </ScrollView>
 
 
