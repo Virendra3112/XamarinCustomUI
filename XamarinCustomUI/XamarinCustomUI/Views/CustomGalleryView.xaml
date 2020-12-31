@@ -8,7 +8,7 @@
              xmlns:ffImageTransform="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
              xmlns:pancakeView="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:effects="clr-namespace:XamarinCustomUI.Effects"         
-             Title="Sample Gallery"    
+             Title="Sample Gallery" 
              x:Class="XamarinCustomUI.Views.CustomGalleryView">
     <ContentPage.Content>
 
@@ -16,9 +16,18 @@
         <ScrollView Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                 FlexLayout.Basis="{OnIdiom Phone='50%' }" FlexLayout.AlignSelf="Start">
             <StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <Image Source="close" WidthRequest="50" HeightRequest="50" HorizontalOptions="Start" />
-                    <Image Source="delete" WidthRequest="50" HeightRequest="50" HorizontalOptions="EndAndExpand" />
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Image Source="close" WidthRequest="20" HeightRequest="20" HorizontalOptions="Start">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Close_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Image Source="delete" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand" >
+                        
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Close_Tapped"/>
+                        </Image.GestureRecognizers>
+                    </Image>
                 </StackLayout>
                 <FlexLayout Grid.Row="1" BackgroundColor="Transparent" BindableLayout.ItemsSource="{Binding GalleryList, Mode=TwoWay, Source={x:Reference self}}"
                      Padding="0" Margin="10,0"

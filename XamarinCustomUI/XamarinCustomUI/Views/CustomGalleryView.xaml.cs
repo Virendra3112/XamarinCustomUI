@@ -110,5 +110,15 @@ namespace XamarinCustomUI.Views
             IsLongPressed = false;
             IsImageChecked = true;
         }
+
+        private void Close_Tapped(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Delete_Tapped(object sender, EventArgs e)
+        {
+
+        }
     }
 }
