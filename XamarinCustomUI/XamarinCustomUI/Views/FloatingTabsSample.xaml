@@ -3,13 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:XamarinCustomUI.Controls"
+             mc:Ignorable="d" Title="Floating Tabs"
              x:Class="XamarinCustomUI.Views.FloatingTabsSample">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <controls:RoundedCornersButton BackgroundColor="Red"
+                                                CornerRadius="25" Opacity="0.85"
+                                                VerticalOptions="Fill" HorizontalOptions="FillAndExpand" 
+                                                Grid.Column="0" Grid.ColumnSpan="3" />
+
+            <Button x:Name="Tab1" Style="{StaticResource MaterialFontButton}"
+                    Text="Tab1" BackgroundColor="Yellow"
+                    Grid.Column="0"
+                    />
+
+            <Button x:Name="Tab2" Style="{StaticResource MaterialFontButton}"
+                    Text="Tab2"
+                    Grid.Column="1"
+                     />
+
+            <Button x:Name="Tab3" Style="{StaticResource MaterialFontButton}"
+                    Text="Tab3"
+                    Grid.Column="2"
+                     />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

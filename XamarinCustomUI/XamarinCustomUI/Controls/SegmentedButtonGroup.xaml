@@ -5,8 +5,8 @@
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
        mc:Ignorable="d"
        xmlns:controls="clr-namespace:XamarinCustomUI.Controls"
-       HeightRequest="40" CornerRadius="1" Padding="0"
-       HasShadow="False" x:Class="XamarinCustomUI.Controls.SegmentedButtonGroup">
+       HeightRequest="40" CornerRadius="10" Padding="0"
+       HasShadow="True" x:Class="XamarinCustomUI.Controls.SegmentedButtonGroup">
     <Frame.Content>
         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                  Spacing="0" Padding="0" Margin="0"

@@ -25,5 +25,18 @@
     <Color x:Key="buttonColor">#009f8b</Color>
 
 
+    <Style x:Key="TransparentButton" TargetType="Button">
+        <Setter Property="BorderColor" Value="Transparent" />
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <Style x:Key="MaterialFontButton" TargetType="Button" BasedOn="{StaticResource TransparentButton}">
+        <Setter Property="FontSize" Value="26" />
+        <Setter Property="TextColor" Value="Black" />
+        <Setter Property="WidthRequest" Value="50" />
+        <Setter Property="HeightRequest" Value="50" />
+    </Style>
 
 </ResourceDictionary>

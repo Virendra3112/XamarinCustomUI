@@ -68,6 +68,8 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "GalleryView", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "FloatingTabs", Image = "icon.png" });
+
 
         }
 
@@ -143,18 +145,26 @@ namespace XamarinCustomUI
 
                             break;
                         }
-                         case "LoginSample":
+                    case "LoginSample":
                         {
                             Navigation.PushAsync(new LoginSamples());
 
                             break;
-                        } case "GalleryView":
+                        }
+                    case "GalleryView":
                         {
                             Navigation.PushAsync(new CustomGalleryView());
 
                             break;
-                        }
-                        
+                        } 
+                    
+                    //case "FloatingTabs":
+                    //    {
+                    //        Navigation.PushAsync(new FloatingTabsSample());
+
+                    //        break;
+                    //    }
+
 
                     default:
                         break;

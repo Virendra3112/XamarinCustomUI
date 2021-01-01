@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
+             mc:Ignorable="d" x:Name="self"
              x:Class="XamarinCustomUI.Controls.SegmentedButton">
   <ContentView.Content>
         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
@@ -11,19 +11,14 @@
                          Padding="0" Spacing="0"
                          Margin="-20, 0, 0, 0">
 
-            <!--<Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+            <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
                        HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                        LineBreakMode="TailTruncation"
                        Margin="0"
-                       FontFamily="{Binding Source={x:Reference self}, Path=FontFamily}"
-                       FontSize="{Binding Source={x:Reference self}, Path=FontSize}"
-                       FontAttributes="{Binding Source={x:Reference self}, Path=FontAttributes}"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
                        TextColor="{Binding Source={x:Reference self}, Path=TextColor}"
-                       Text="{Binding Source={x:Reference self}, Path=Text}"></Label>-->
-
-
-
-            <Label x:Name="LabelTab1" Text="Tab 1" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" IsVisible="True" />
+                       Text="{Binding Source={x:Reference self}, Path=Text}"></Label>
 
         </StackLayout>
     </ContentView.Content>
