@@ -12,10 +12,12 @@ namespace XamarinCustomUI.Views
     public partial class CustomGalleryView : ContentPage, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged([System.Runtime.CompilerServices.CallerMemberName] string propertyName = "")
+
+        protected void OnPropertyChanged(string propertyName)
         {
-            if (this.PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
 
@@ -25,7 +27,7 @@ namespace XamarinCustomUI.Views
         public ObservableCollection<GalleryModel> GalleryList
         {
             get { return _galleryList; }
-            set { _galleryList = value; NotifyPropertyChanged(); }
+            set { _galleryList = value; OnPropertyChanged("GalleryList"); }
         }
 
         private bool _isLongPressed;
@@ -38,7 +40,7 @@ namespace XamarinCustomUI.Views
             set
             {
                 _isLongPressed = value;
-                NotifyPropertyChanged();
+                OnPropertyChanged("IsLongPressed");
             }
         }
 
@@ -52,7 +54,7 @@ namespace XamarinCustomUI.Views
             set
             {
                 _isImageChecked = value;
-                NotifyPropertyChanged();
+                OnPropertyChanged("IsImageChecked");
             }
         }
 
@@ -113,12 +115,21 @@ namespace XamarinCustomUI.Views
 
         private void Close_Tapped(object sender, EventArgs e)
         {
+            foreach (var item in GalleryList)
+            {
+                if (item.IsSelected)
+                    item.IsSelected = false;
+
+            }
+
+            IsLongPressed = false;
+            IsImageChecked = false;
 
         }
 
         private void Delete_Tapped(object sender, EventArgs e)
         {
-
+            DisplayAlert("Alert", "Are you sure you want to delete selected images ?", "Ok");
         }
     }
 }

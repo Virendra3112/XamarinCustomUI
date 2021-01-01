@@ -16,7 +16,7 @@
         <ScrollView Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                 FlexLayout.Basis="{OnIdiom Phone='50%' }" FlexLayout.AlignSelf="Start">
             <StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="10">
+                <StackLayout BackgroundColor="Gray" Orientation="Horizontal" Margin="0" Padding="10" IsVisible="{Binding IsLongPressed, Mode=TwoWay, Source={x:Reference self}}" >
                     <Image Source="close" WidthRequest="20" HeightRequest="20" HorizontalOptions="Start">
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Close_Tapped"/>
@@ -25,11 +25,11 @@
                     <Image Source="delete" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand" >
                         
                         <Image.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="Close_Tapped"/>
+                            <TapGestureRecognizer Tapped="Delete_Tapped"/>
                         </Image.GestureRecognizers>
                     </Image>
                 </StackLayout>
-                <FlexLayout Grid.Row="1" BackgroundColor="Transparent" BindableLayout.ItemsSource="{Binding GalleryList, Mode=TwoWay, Source={x:Reference self}}"
+                <FlexLayout x:Name="galleryLayout"  Grid.Row="1" BackgroundColor="Transparent" BindableLayout.ItemsSource="{Binding GalleryList, Mode=TwoWay, Source={x:Reference self}}"
                      Padding="0" Margin="10,0"
                     Wrap="Wrap" Direction="Row" JustifyContent="Center" AlignContent="Center" AlignItems="Center">
                 <BindableLayout.ItemTemplate>
@@ -39,7 +39,7 @@
                                    Margin="10" Padding="0,20" CornerRadius="5" HeightRequest="80" WidthRequest="80" BackgroundColor="Black">
                                 <FlexLayout Direction="Column" JustifyContent="Center" >
                                     <CheckBox IsVisible="{Binding IsLongPressed, Mode=TwoWay, Source={x:Reference self}}" 
-                        IsChecked="{Binding IsSelected}"
+                        IsChecked="{Binding IsSelected, Mode=TwoWay}"
                         HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" />
                                     <ffImage:CachedImage HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0"
 			            WidthRequest="50" HeightRequest="50" Margin="10" FlexLayout.AlignSelf="Center"
