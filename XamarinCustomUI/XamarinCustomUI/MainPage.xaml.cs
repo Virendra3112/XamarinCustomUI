@@ -158,12 +158,12 @@ namespace XamarinCustomUI
                             break;
                         } 
                     
-                    //case "FloatingTabs":
-                    //    {
-                    //        Navigation.PushAsync(new FloatingTabsSample());
+                    case "FloatingTabs":
+                        {
+                            Navigation.PushAsync(new FloatingTabsSample());
 
-                    //        break;
-                    //    }
+                            break;
+                        }
 
 
                     default:
