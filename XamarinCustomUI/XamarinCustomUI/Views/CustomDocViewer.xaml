@@ -7,9 +7,13 @@
              x:Class="XamarinCustomUI.Views.CustomDocViewer">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ProgressBar Progress="0.2"  
+                 HorizontalOptions="FillAndExpand"  
+                 x:Name="progress"  
+                 IsVisible="True"/>
+            <WebView x:Name="webView" HeightRequest="1000" WidthRequest="1000"  Navigated="webviewNavigated" Navigating="webviewNavigating" />
+
+            <Label x:Name="labelLoading" Text="Loading..." IsVisible="false" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

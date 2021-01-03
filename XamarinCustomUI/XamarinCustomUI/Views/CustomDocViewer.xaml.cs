@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +10,27 @@ namespace XamarinCustomUI.Views
         public CustomDocViewer()
         {
             InitializeComponent();
+
+            //add url here
+            var docurl = "";
+            webView.Source = new UrlWebViewSource() { Url =  docurl };
+
+        }
+
+        protected override async void OnAppearing()
+        {           
+            base.OnAppearing();
+            await progress.ProgressTo(0.9, 900, Easing.SpringIn);
+        }
+
+        void webviewNavigating(object sender, WebNavigatingEventArgs e)
+        {
+            progress.IsVisible = true;
+        }
+
+        void webviewNavigated(object sender, WebNavigatedEventArgs e)
+        {
+            progress.IsVisible = false;
         }
     }
 }
