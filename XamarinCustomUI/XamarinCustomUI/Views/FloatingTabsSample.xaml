@@ -21,7 +21,6 @@
                     <Frame x:Name="ContractsFrame" HasShadow="False" AbsoluteLayout.LayoutBounds="1,1,1,1"
                            AbsoluteLayout.LayoutFlags="All" BackgroundColor="LightGray" 
                            HorizontalOptions="Fill" VerticalOptions="Fill" CornerRadius="0" Margin="0" IsVisible="True" >
-
                       
 
                     </Frame>
