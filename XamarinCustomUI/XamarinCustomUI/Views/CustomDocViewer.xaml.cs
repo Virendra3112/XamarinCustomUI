@@ -20,17 +20,17 @@ namespace XamarinCustomUI.Views
         protected override async void OnAppearing()
         {           
             base.OnAppearing();
-            await progress.ProgressTo(0.9, 900, Easing.SpringIn);
+            await progressBar.ProgressTo(0.9, 900, Easing.SpringIn);
         }
 
         void webviewNavigating(object sender, WebNavigatingEventArgs e)
         {
-            progress.IsVisible = true;
+            progressBar.IsVisible = true;
         }
 
         void webviewNavigated(object sender, WebNavigatedEventArgs e)
         {
-            progress.IsVisible = false;
+            progressBar.IsVisible = false;
         }
     }
 }

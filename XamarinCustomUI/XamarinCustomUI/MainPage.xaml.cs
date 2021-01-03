@@ -70,6 +70,7 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "FloatingTabs", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "CustomWebView", Image = "icon.png" });
 
         }
 
@@ -156,11 +157,18 @@ namespace XamarinCustomUI
                             Navigation.PushAsync(new CustomGalleryView());
 
                             break;
-                        } 
-                    
+                        }
+
                     case "FloatingTabs":
                         {
                             Navigation.PushAsync(new FloatingTabsSample());
+
+                            break;
+
+                        }
+                    case "CustomWebView":
+                        {
+                            Navigation.PushAsync(new CustomDocViewer());
 
                             break;
                         }

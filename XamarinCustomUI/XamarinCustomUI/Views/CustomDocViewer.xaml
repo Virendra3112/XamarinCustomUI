@@ -9,11 +9,11 @@
         <StackLayout>
             <ProgressBar Progress="0.2"  
                  HorizontalOptions="FillAndExpand"  
-                 x:Name="progress"  
+                 x:Name="progressBar"  
                  IsVisible="True"/>
             <WebView x:Name="webView" HeightRequest="1000" WidthRequest="1000"  Navigated="webviewNavigated" Navigating="webviewNavigating" />
 
-            <Label x:Name="labelLoading" Text="Loading..." IsVisible="false" />
+            <Label x:Name="labelLoading" Text="Loading please wait..." IsVisible="false" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
