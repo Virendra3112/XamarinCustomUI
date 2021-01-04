@@ -5,7 +5,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:controls="clr-namespace:XamarinCustomUI.Controls"
              mc:Ignorable="d" x:Name="self" NavigationPage.HasNavigationBar="False"
-             BackgroundColor="Yellow"
              x:Class="XamarinCustomUI.Views.CustomTabsSample">
 
     <ContentPage.Content>
@@ -47,26 +46,17 @@
 
                 <AbsoluteLayout Grid.Row="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
 
-                    <Frame x:Name="ContractsFrame" HasShadow="False" AbsoluteLayout.LayoutBounds="1,1,1,1"
+                    <Frame x:Name="tabFrame" HasShadow="False" AbsoluteLayout.LayoutBounds="1,1,1,1"
                            AbsoluteLayout.LayoutFlags="All" BackgroundColor="White" 
-                           HorizontalOptions="Fill" VerticalOptions="Fill" CornerRadius="12" Margin="10,5,10,0" IsVisible="True" >
+                           HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" CornerRadius="1" Margin="5" >
 
-                        <!--<StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Spacing="0" Margin="0" Padding="0">
-
-                            <Label x:Name="LabelTab1" Text="Tab 1" HorizontalTextAlignment="Center" IsVisible="True" />
-                            <Label x:Name="LabelTab2" Text="Tab 2" IsVisible="False"/>
-                            <Label x:Name="LabelTab3" Text="Tab 3" IsVisible="False"/>
-
-
-                        </StackLayout>-->
+                       
 
                     </Frame>
 
                 </AbsoluteLayout>
 
-                <Label  x:Name="NoOrdersLabel"  Text="" Grid.Row="0" Grid.RowSpan="2"
-                                HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
-                                TextColor="BlueViolet" IsVisible="False" />
+                
 
             </Grid>
 

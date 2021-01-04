@@ -2,6 +2,7 @@
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinCustomUI.Views.TabPages;
 
 namespace XamarinCustomUI.Views
 {
@@ -19,12 +20,44 @@ namespace XamarinCustomUI.Views
             set
             {
                 SetValue(SelectedTabProperty, value);
+                SetTabs(value);
             }
         }
 
+        private void SetTabs(int value)
+        {
+            try
+            {
+                switch (value)
+                {
 
-        //public Command BackButtonTapped { get; set; }
-        //public Command BellButtonTapped { get; set; }
+                    case 0:
+                        tabFrame.Content = new SampleTab1();
+
+                        break;
+
+                    case 1:
+                        tabFrame.Content = new SampleTab2();
+
+                        break;
+
+                    case 2:
+                        tabFrame.Content = new SampleTab3();
+
+                        break;
+
+                    default:
+                        tabFrame.Content = new SampleTab1();
+
+                        break;
+
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+        }
 
         public CustomTabsSample()
         {
@@ -35,36 +68,8 @@ namespace XamarinCustomUI.Views
             catch (Exception ex)
             {
             }
-
-            //BackButtonTapped = new Command(OnBackButtonTapped);
-            //BellButtonTapped = new Command(OnBellButtonTapped);
         }
 
-        ///// <summary>
-        ///// On Back Button Tapped
-        ///// </summary>
-        //private void OnBackButtonTapped()
-        //{
-        //    try
-        //    {
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //    }
-        //}
-
-        ///// <summary>
-        ///// On Bell Button Tapped
-        ///// </summary>
-        //private void OnBellButtonTapped()
-        //{
-        //    try
-        //    {
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //    }
-        //}
 
     }
 }
