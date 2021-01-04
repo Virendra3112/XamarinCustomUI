@@ -12,7 +12,7 @@ namespace XamarinCustomUI.Views
             InitializeComponent();
 
             //add url here
-            var docurl = "";
+            var docurl = "http://www.africau.edu/images/default/sample.pdf";
             webView.Source = new UrlWebViewSource() { Url =  docurl };
 
         }
