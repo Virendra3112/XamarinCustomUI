@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="clr-namespace:XamarinCustomUI.Controls"
-             mc:Ignorable="d" Title="Floating Tabs" x:Name="self"
+             mc:Ignorable="d" x:Name="self" NavigationPage.HasNavigationBar="False"
              x:Class="XamarinCustomUI.Views.FloatingTabsSample">
     <ContentPage.Content>
       

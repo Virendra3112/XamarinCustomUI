@@ -67,5 +67,11 @@ namespace XamarinCustomUI.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            SelectedTab = 0;
+        }
     }
 }
