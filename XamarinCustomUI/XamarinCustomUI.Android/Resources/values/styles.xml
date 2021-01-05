@@ -26,7 +26,7 @@
 
   <style name="Theme.Splash" parent="android:Theme">
 
-    <!--<item name="android:windowBackground">@drawable/icon</item>-->
+    <item name="android:windowBackground">@drawable/splash</item>
     <item name="android:windowNoTitle">true</item>
 
   </style>
