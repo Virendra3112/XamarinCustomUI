@@ -1,11 +1,9 @@
-﻿using System;
-
+﻿
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android;
 
 namespace XamarinCustomUI.Droid
 {
@@ -27,11 +25,40 @@ namespace XamarinCustomUI.Droid
 
             LoadApplication(new App());
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+
+
+        const int RequestLocationId = 0;
+        readonly string[] AppPermission =
+        {
+            Manifest.Permission.WriteExternalStorage
+        };
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+
+            if ((int)Build.VERSION.SdkInt >= 23)
+            {
+                if (CheckSelfPermission(Manifest.Permission.WriteExternalStorage) != Permission.Granted)
+                {
+                    RequestPermissions(AppPermission, 0);
+                }
+                else
+                {
+                    // Permissions already granted - display a message.
+                }
+            }
+
         }
     }
 }
