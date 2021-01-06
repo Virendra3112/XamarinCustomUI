@@ -77,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomRenderers\BorderLessEntryRenderer.cs" />
+    <Compile Include="CustomRenderers\CustomEntryRenderer.cs" />
     <Compile Include="CustomRenderers\CustomWebViewRenderer.cs" />
     <Compile Include="CustomRenderers\ThemeHelper.cs" />
     <Compile Include="Effects\AndroidLongPressedEffect.cs" />
