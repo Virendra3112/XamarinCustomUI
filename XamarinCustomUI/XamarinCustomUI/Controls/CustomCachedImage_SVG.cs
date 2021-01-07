@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using FFImageLoading.Svg.Forms;
 using Xamarin.Forms;
+using XamarinCustomUI.Helpers;
 
 namespace XamarinCustomUI.Controls
 {
@@ -32,16 +33,16 @@ namespace XamarinCustomUI.Controls
 
         private void SetColor()
         {
-            //Dictionary<string, string> imageStringMap = new Dictionary<string, string>()
-            //{
-            //    {
-            //       AppConstants.CustomSvgCachedImage.DefaultFillColor,
-            //       string.Format(AppConstants.CustomSvgCachedImage.FillColor, ImageColor.ToHex())
-            //    }
-            //};
+            Dictionary<string, string> imageStringMap = new Dictionary<string, string>()
+            {
+                {
+                   ApplicationConstants.DefaultFillColor,
+                   string.Format(ApplicationConstants.FillColor, ImageColor.ToHex())
+                }
+            };
 
-            //ReplaceStringMap = imageStringMap;
-            //Source = Source;
+            ReplaceStringMap = imageStringMap;
+            Source = Source;
         }
     }
 }
