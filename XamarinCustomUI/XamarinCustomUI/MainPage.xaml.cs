@@ -72,6 +72,8 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "CustomWebView", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "FloatingButton", Image = "icon.png" });
+
         }
 
 
@@ -169,6 +171,12 @@ namespace XamarinCustomUI
                     case "CustomWebView":
                         {
                             Navigation.PushAsync(new CustomDocViewer());
+
+                            break;
+                        }
+                         case "FloatingButton":
+                        {
+                            Navigation.PushAsync(new FloatingAddButton());
 
                             break;
                         }
