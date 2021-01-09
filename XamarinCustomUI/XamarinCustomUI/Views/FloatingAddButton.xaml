@@ -7,9 +7,14 @@
              x:Class="XamarinCustomUI.Views.FloatingAddButton">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image Source="icon.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50">
+
+                <Image.GestureRecognizers>
+                    <PanGestureRecognizer PanUpdated="PanGestureRecognizer_PanUpdated" />
+                </Image.GestureRecognizers> 
+
+            </Image>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
