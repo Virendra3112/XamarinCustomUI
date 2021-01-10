@@ -8,6 +8,8 @@ namespace XamarinCustomUI
 {
     public partial class App : Application
     {
+        public static double ScreenWidth;
+        public static double ScreenHeight;
         public static Theme AppTheme { get; set; }
 
         public App()
