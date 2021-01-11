@@ -71,7 +71,7 @@
                 </ScrollView>
 
                 <customControls:ImageOverlay Margin="0" Padding="0"
-            IsVisible="{Binding IsImageOverlayVisible}" VerticalOptions="FillAndExpand"/>
+            IsVisible="{Binding IsImageOverlayVisible, Mode=TwoWay, Source={x:Reference self}}" VerticalOptions="FillAndExpand"/>
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>

@@ -76,6 +76,9 @@ namespace XamarinCustomUI.Views
         public Command OnLongPressedCommand { get; set; }
 
         public Command ImageClickedCommand { get; set; }
+        public Command CloseImagePreviewCommand { get; set; }
+
+        
 
         public CustomGalleryView()
         {
@@ -96,6 +99,7 @@ namespace XamarinCustomUI.Views
 
             ImageClickedCommand = new Command(OnImageClicked);
             OnLongPressedCommand = new Command(OnLongPressed);
+            CloseImagePreviewCommand = new Command(CloseImagePreviewClicked);
 
             GetData();
         }
@@ -147,6 +151,15 @@ namespace XamarinCustomUI.Views
         private void Delete_Tapped(object sender, EventArgs e)
         {
             DisplayAlert("Alert", "Are you sure you want to delete selected images ?", "Ok");
+        }
+
+        private void CloseImagePreviewClicked()
+        {
+            IsImageOverlayVisible = false;
+
+            IsLongPressed = false;
+            IsImageChecked = false;
+
         }
     }
 }
