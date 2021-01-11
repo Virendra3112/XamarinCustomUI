@@ -23,7 +23,7 @@
                         </Image.GestureRecognizers>
                     </Image>
                     <Image Source="delete" WidthRequest="20" HeightRequest="20" HorizontalOptions="EndAndExpand" >
-                        
+
                         <Image.GestureRecognizers>
                             <TapGestureRecognizer Tapped="Delete_Tapped"/>
                         </Image.GestureRecognizers>
@@ -32,16 +32,16 @@
                 <FlexLayout x:Name="galleryLayout"  Grid.Row="1" BackgroundColor="Transparent" BindableLayout.ItemsSource="{Binding GalleryList, Mode=TwoWay, Source={x:Reference self}}"
                      Padding="0" Margin="10,0"
                     Wrap="Wrap" Direction="Row" JustifyContent="Center" AlignContent="Center" AlignItems="Center">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate>
-                        <Grid FlexLayout.Basis="{OnIdiom Phone='33%'}">
-                            <Frame VerticalOptions="Start" HasShadow="True" BorderColor="#BB7549"
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Grid FlexLayout.Basis="{OnIdiom Phone='33%'}">
+                                <Frame VerticalOptions="Start" HasShadow="True" BorderColor="#BB7549"
                                    Margin="10" Padding="0,20" CornerRadius="5" HeightRequest="80" WidthRequest="80" BackgroundColor="Black">
-                                <FlexLayout Direction="Column" JustifyContent="Center" >
-                                    <CheckBox IsVisible="{Binding IsLongPressed, Mode=TwoWay, Source={x:Reference self}}" 
+                                    <FlexLayout Direction="Column" JustifyContent="Center" >
+                                        <CheckBox IsVisible="{Binding IsLongPressed, Mode=TwoWay, Source={x:Reference self}}" 
                         IsChecked="{Binding IsSelected, Mode=TwoWay}"
                         HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" />
-                                    <ffImage:CachedImage HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0"
+                                        <ffImage:CachedImage HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0"
 			            WidthRequest="50" HeightRequest="50" Margin="10" FlexLayout.AlignSelf="Center"
 			            DownsampleToViewSize="true" FadeAnimationForCachedImages="False" Aspect="AspectFit"
                         RetryCount="3" CacheType="Disk"
@@ -50,80 +50,22 @@
                         effects:LongPressedEffect.CommandParameter="{Binding .}"              
                         effects:SingleClickEffect.Command="{Binding ImageClickedCommand, Mode=TwoWay, Source={x:Reference self}}"
                         effects:SingleClickEffect.CommandParameter="{Binding .}">
-                                        <ffImage:CachedImage.Transformations>
-                                            <ffImageTransform:CropTransformation/>
-                                        </ffImage:CachedImage.Transformations>
+                                            <ffImage:CachedImage.Transformations>
+                                                <ffImageTransform:CropTransformation/>
+                                            </ffImage:CachedImage.Transformations>
 
-                                        <ffImage:CachedImage.Effects>
-                                            <effects:LongPressedEffect />
-                                            <effects:SingleClickEffect />
-                                        </ffImage:CachedImage.Effects>
-                                    </ffImage:CachedImage>
-                                </FlexLayout>
-                            </Frame>
-                        </Grid>
-
-                    </DataTemplate>
-
-                </BindableLayout.ItemTemplate>
-
-
-            </FlexLayout>
-            </StackLayout>
-        </ScrollView>
-
-
-
-
-        <!--<Grid RowSpacing="0" BackgroundColor="Transparent" >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.2*" />
-                <RowDefinition Height="Auto" />
-
-            </Grid.RowDefinitions>
-
-            -->
-        <!--<StackLayout Grid.Row="0" Orientation="Horizontal" HorizontalOptions="End">
-
-                <Label Text="{x:Static resource:AppResource.ThemeText}" TextColor="{DynamicResource TextPrimaryColor}" FontSize="Small" Padding="5"/>
-
-                <Switch HorizontalOptions="Start" VerticalOptions="Start" IsToggled="{Binding SetDarkMode, Source={x:Reference MyPage}}"/>
-
-            </StackLayout>-->
-        <!--
-
-
-            <ScrollView Grid.Row="2">
-
-                <FlexLayout BindableLayout.ItemsSource="{Binding GalleryList , Source={x:Reference GalleryPage}}"
-                    Wrap="Wrap" x:Name="Taches1"
-                    Direction="Row"
-                    JustifyContent="Center"
-                    AlignItems="Center" BackgroundColor="Transparent"
-                    AlignContent="Start">
-                    <BindableLayout.ItemTemplate>
-                        <DataTemplate>
-                            <Grid FlexLayout.Basis="{OnIdiom Phone='33%'}">
-                                <Frame Margin="10" Padding="0,20" CornerRadius="5" HeightRequest="80" WidthRequest="80" BackgroundColor="{DynamicResource FrameColor}">
-                                    <FlexLayout Direction="Column" AlignItems="Center">
-                                        <Image Source="{Binding Image}" WidthRequest="50" HeightRequest="50"/>
-                                        <Label Text="{Binding Name}" TextColor="{DynamicResource TextPrimaryColor}" FontSize="Small"  
-                                             HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"  LineBreakMode="CharacterWrap" MaxLines="2"/>
+                                            <ffImage:CachedImage.Effects>
+                                                <effects:LongPressedEffect />
+                                                <effects:SingleClickEffect />
+                                            </ffImage:CachedImage.Effects>
+                                        </ffImage:CachedImage>
                                     </FlexLayout>
-                                    -->
-        <!--<Frame.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" CommandParameter="{Binding Name}"/>
-                                    </Frame.GestureRecognizers>-->
-        <!--
                                 </Frame>
                             </Grid>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>
-                
-                
-            </ScrollView>
-
-        </Grid>-->
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
