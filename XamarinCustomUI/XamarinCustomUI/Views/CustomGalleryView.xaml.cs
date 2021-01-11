@@ -58,6 +58,20 @@ namespace XamarinCustomUI.Views
             }
         }
 
+        private bool _isImageOverlayVisible;
+        public bool IsImageOverlayVisible
+        {
+            get
+            {
+                return _isImageOverlayVisible;
+            }
+            set
+            {
+                _isImageOverlayVisible = value;
+                OnPropertyChanged("IsImageOverlayVisible");
+            }
+        }
+
 
         public Command OnLongPressedCommand { get; set; }
 
@@ -90,6 +104,8 @@ namespace XamarinCustomUI.Views
         {
             IsLongPressed = false;
             IsImageChecked = false;
+            IsImageOverlayVisible = false;
+
             GalleryList.Add(new GalleryModel { ImageId = 1, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
             GalleryList.Add(new GalleryModel { ImageId = 2, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
             GalleryList.Add(new GalleryModel { ImageId = 3, ImageUrl = "icon", IsDeleted = false, IsSelected = false });
@@ -111,6 +127,7 @@ namespace XamarinCustomUI.Views
         {
             IsLongPressed = false;
             IsImageChecked = true;
+            IsImageOverlayVisible = true;
         }
 
         private void Close_Tapped(object sender, EventArgs e)
