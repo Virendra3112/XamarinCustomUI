@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             mc:Ignorable="d"
+             mc:Ignorable="d" x:Name="self"
              x:Class="XamarinCustomUI.Controls.ImageOverlay">
     <ContentView.Content>
 
@@ -20,17 +20,17 @@
             <Frame Margin="0" Grid.Row="1" Grid.Column="1"
                 Padding="0" BorderColor="Black">
                 <StackLayout Spacing="0" VerticalOptions="CenterAndExpand">
-                    <ff:CachedImage
+                    <ff:CachedImage HeightRequest="250" WidthRequest="250"
                           Aspect="AspectFit" VerticalOptions="CenterAndExpand"
-                          Source="{Binding Source={x:Reference this}, Path= Parent.BindingContext.SelectedImageSource}">
+                          Source="icon">
                     </ff:CachedImage>
 
                 </StackLayout>
             </Frame>
            
             <Image Margin="-40,0,0,-20"
-                WidthRequest="50" HeightRequest="50" Grid.Row="0" Grid.Column="2"
-                    Source="icon">
+                WidthRequest="30" HeightRequest="30" Grid.Row="0" Grid.Column="2"
+                    Source="close">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding CloseImagePreviewCommand}"/>
                 </Image.GestureRecognizers>
