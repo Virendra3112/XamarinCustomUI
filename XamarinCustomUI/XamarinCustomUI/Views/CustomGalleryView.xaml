@@ -14,7 +14,7 @@
     <ContentPage.Content>
 
         <AbsoluteLayout>
-            <StackLayout>
+            <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
                 <ScrollView Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand"
                 FlexLayout.Basis="{OnIdiom Phone='50%' }" FlexLayout.AlignSelf="Start">
                     <StackLayout>
@@ -70,9 +70,11 @@
                     </StackLayout>
                 </ScrollView>
 
-                <customControls:ImageOverlay Margin="0" Padding="0"
-            IsVisible="{Binding IsImageOverlayVisible, Mode=TwoWay, Source={x:Reference self}}" VerticalOptions="FillAndExpand"/>
+               
             </StackLayout>
+
+            <customControls:ImageOverlay Margin="0" Padding="0" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds=".5,.3,300,300"
+            IsVisible="{Binding IsImageOverlayVisible, Mode=TwoWay, Source={x:Reference self}}" VerticalOptions="FillAndExpand"/>
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
