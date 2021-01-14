@@ -74,6 +74,8 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "FloatingButton", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "XLabs Charts", Image = "icon.png" });
+
         }
 
 
@@ -174,9 +176,15 @@ namespace XamarinCustomUI
 
                             break;
                         }
-                         case "FloatingButton":
+                    case "FloatingButton":
                         {
                             Navigation.PushAsync(new FloatingAddButton());
+
+                            break;
+                        }
+                    case "XLabs Charts":
+                        {
+                            Navigation.PushAsync(new XLabsChartsSample());
 
                             break;
                         }
