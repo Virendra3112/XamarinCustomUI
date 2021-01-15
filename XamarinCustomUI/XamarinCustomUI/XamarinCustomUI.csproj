@@ -20,6 +20,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.0" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="XLabs.Forms.Charting" Version="2.0.5782" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +62,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources\LightTheme.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BiometricsAuthenticationSample.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\CustomAccordianViewSample.xaml">
