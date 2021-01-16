@@ -57,6 +57,9 @@
     <PackageReference Include="Microcharts.Forms">
       <Version>0.9.5.9</Version>
     </PackageReference>
+    <PackageReference Include="Plugin.CurrentActivity">
+      <Version>2.1.0.4</Version>
+    </PackageReference>
     <PackageReference Include="Plugin.Permissions">
       <Version>6.0.1</Version>
     </PackageReference>
@@ -86,6 +89,7 @@
     <Compile Include="CustomRenderers\CustomDatePickerRenderer.cs" />
     <Compile Include="CustomRenderers\CustomEntryRenderer.cs" />
     <Compile Include="CustomRenderers\CustomWebViewRenderer.cs" />
+    <Compile Include="CustomRenderers\ImageHelpers.cs" />
     <Compile Include="CustomRenderers\MultiMediaPickerService .cs" />
     <Compile Include="CustomRenderers\ThemeHelper.cs" />
     <Compile Include="Effects\AndroidLongPressedEffect.cs" />
