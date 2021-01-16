@@ -66,6 +66,7 @@
     <Compile Include="CustomRendrers\BorderLessEntryRenderer.cs" />
     <Compile Include="CustomRendrers\CustomDatePickerRenderer.cs" />
     <Compile Include="CustomRendrers\CustomWebViewRenderer.cs" />
+    <Compile Include="CustomRendrers\MultiMediaPickerService.cs" />
     <Compile Include="CustomRendrers\ThemeHelper.cs" />
     <Compile Include="Effects\iOSLongPressedEffect.cs" />
     <Compile Include="Effects\iOSSingleClickEffect.cs" />

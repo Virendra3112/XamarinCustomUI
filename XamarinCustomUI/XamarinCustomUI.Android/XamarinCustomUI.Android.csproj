@@ -86,6 +86,7 @@
     <Compile Include="CustomRenderers\CustomDatePickerRenderer.cs" />
     <Compile Include="CustomRenderers\CustomEntryRenderer.cs" />
     <Compile Include="CustomRenderers\CustomWebViewRenderer.cs" />
+    <Compile Include="CustomRenderers\MultiMediaPickerService .cs" />
     <Compile Include="CustomRenderers\ThemeHelper.cs" />
     <Compile Include="Effects\AndroidLongPressedEffect.cs" />
     <Compile Include="Effects\AndroidSingleClickEffect.cs" />
