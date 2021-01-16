@@ -48,9 +48,9 @@ namespace XamarinCustomUI
 
             CategoryList = new ObservableCollection<Item>();
 
-            CategoryList.Add(new Item { Name = "Label", Image = "icon.png" });
+            //CategoryList.Add(new Item { Name = "Label", Image = "icon.png" });
 
-            CategoryList.Add(new Item { Name = "Entry", Image = "icon.png" });
+            //CategoryList.Add(new Item { Name = "Entry", Image = "icon.png" });
 
             CategoryList.Add(new Item { Name = "Action Bar", Image = "icon.png" });
 
@@ -72,9 +72,9 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "CustomWebView", Image = "icon.png" });
 
-            CategoryList.Add(new Item { Name = "FloatingButton", Image = "icon.png" });
+            //CategoryList.Add(new Item { Name = "FloatingButton", Image = "icon.png" });
 
-            CategoryList.Add(new Item { Name = "XLabs Charts", Image = "icon.png" });
+            //CategoryList.Add(new Item { Name = "XLabs Charts", Image = "icon.png" });
 
         }
 
