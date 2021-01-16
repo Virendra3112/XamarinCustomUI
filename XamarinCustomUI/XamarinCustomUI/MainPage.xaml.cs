@@ -76,6 +76,8 @@ namespace XamarinCustomUI
 
             //CategoryList.Add(new Item { Name = "XLabs Charts", Image = "icon.png" });
 
+            CategoryList.Add(new Item { Name = "MultiImagePicker", Image = "icon.png" });
+
         }
 
 
@@ -185,6 +187,12 @@ namespace XamarinCustomUI
                     case "XLabs Charts":
                         {
                             Navigation.PushAsync(new XLabsChartsSample());
+
+                            break;
+                        }
+                    case "MultiImagePicker":
+                        {
+                            Navigation.PushAsync(new MultipleImagePicker());
 
                             break;
                         }
