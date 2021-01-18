@@ -3,6 +3,7 @@ using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,10 @@ using XamarinCustomUI.Models;
 namespace XamarinCustomUI.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MultipleImagePicker : ContentPage
+    public partial class MultipleImagePicker : ContentPage, INotifyPropertyChanged
     {
-        IMultiMediaPickerService _multiMediaPickerService;
+        public event ProgressChangedEventHandler PropertyChanged;
+        //IMultiMediaPickerService _multiMediaPickerService;
 
         public ObservableCollection<MediaFile> Media { get; set; }
         public ICommand SelectImagesCommand { get; set; }
@@ -26,27 +28,77 @@ namespace XamarinCustomUI.Views
         {
             InitializeComponent();
 
-            _multiMediaPickerService = DependencyService.Get<IMultiMediaPickerService>();//.PickPhotosAsync();
+            //_multiMediaPickerService = DependencyService.Get<IMultiMediaPickerService>();//.PickPhotosAsync();
 
-        }
+            //_multiMediaPickerService.OnMediaPicked += _multiMediaPickerService_OnMediaPicked;
 
-        private async void Button_Clicked(object sender, EventArgs e)
-        {
-            var hasPermission = await CheckPermissionsAsync();
-            if (hasPermission)
+            try
             {
-                Media = new ObservableCollection<MediaFile>();
+                DependencyService.Get<IMultiMediaPickerService>().OnMediaPicked += (s, a) =>
+                   {
+                       Device.BeginInvokeOnMainThread(() =>
+                       {
+                           Media.Add(a);
 
-                await _multiMediaPickerService.PickPhotosAsync();
+                       });
+                   };
 
-                _multiMediaPickerService.OnMediaPicked += (s, a) =>
+
+                DependencyService.Get<IMultiMediaPickerService>().OnMediaPickedCompleted += (s, a) =>
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        Media.Add(a);
+                        //Media.Add(a);
 
                     });
                 };
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        //private void _multiMediaPickerService_OnMediaPicked(object sender, MediaFile e)
+        //{
+        //    try
+        //    {
+        //        Device.BeginInvokeOnMainThread(() =>
+        //          {
+        //              Media.Add(e);
+
+        //          });
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+        //}
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                var hasPermission = await CheckPermissionsAsync();
+                if (hasPermission)
+                {
+                    Media = new ObservableCollection<MediaFile>();
+                    //var _multiMediaPickerService = DependencyService.Get<IMultiMediaPickerService>();
+                    await DependencyService.Get<IMultiMediaPickerService>().PickPhotosAsync();
+
+                    //_multiMediaPickerService.OnMediaPicked += (s, a) =>
+                    //{
+                    //    Device.BeginInvokeOnMainThread(() =>
+                    //    {
+                    //        Media.Add(a);
+
+                    //    });
+                    //};
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
@@ -55,6 +107,8 @@ namespace XamarinCustomUI.Views
             var hasPermission = await CheckPermissionsAsync();
             if (hasPermission)
             {
+                var _multiMediaPickerService = DependencyService.Get<IMultiMediaPickerService>();
+
                 await _multiMediaPickerService.PickVideosAsync();
             }
         }
