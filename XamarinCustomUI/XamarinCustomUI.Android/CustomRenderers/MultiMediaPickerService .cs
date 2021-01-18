@@ -13,9 +13,11 @@ using Android.Widget;
 using Plugin.CurrentActivity;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
+using XamarinCustomUI.Droid.CustomRenderers;
 using XamarinCustomUI.Helpers;
 using XamarinCustomUI.Models;
 
+[assembly: Xamarin.Forms.Dependency(typeof(MultiMediaPickerService))]
 namespace XamarinCustomUI.Droid.CustomRenderers
 {
     public class MultiMediaPickerService : IMultiMediaPickerService
@@ -25,8 +27,13 @@ namespace XamarinCustomUI.Droid.CustomRenderers
         int MultiPickerResultCode = 9793;
         const string TemporalDirectoryName = "TmpMedia";
 
-        MultiMediaPickerService()
+        //MultiMediaPickerService()
+        //{
+        //}
+
+        public MultiMediaPickerService()
         {
+
         }
 
         public event EventHandler<MediaFile> OnMediaPicked;
