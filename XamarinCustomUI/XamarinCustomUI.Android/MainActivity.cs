@@ -4,6 +4,8 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using Android;
+using XamarinCustomUI.Droid.CustomRenderers;
+using Android.Content;
 
 namespace XamarinCustomUI.Droid
 {
@@ -16,14 +18,14 @@ namespace XamarinCustomUI.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             Xamarin.FormsMaps.Init(this, savedInstanceState);
 
-            LoadApplication(new App());
+            LoadApplication(new App(MultiMediaPickerService.SharedInstance));
         }
 
 
@@ -42,7 +44,7 @@ namespace XamarinCustomUI.Droid
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
         }
-
+       
         protected override void OnStart()
         {
             base.OnStart();
@@ -59,6 +61,14 @@ namespace XamarinCustomUI.Droid
                 }
             }
 
+        }
+
+
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            MultiMediaPickerService.SharedInstance.OnActivityResult(requestCode, resultCode, data);
         }
     }
 }

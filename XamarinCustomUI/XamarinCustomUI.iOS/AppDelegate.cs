@@ -5,6 +5,7 @@ using FFImageLoading;
 using FFImageLoading.Forms.Platform;
 using Foundation;
 using UIKit;
+using XamarinCustomUI.iOS.CustomRendrers;
 
 namespace XamarinCustomUI.iOS
 {
@@ -27,6 +28,7 @@ namespace XamarinCustomUI.iOS
 
             Xamarin.FormsMaps.Init();
 
+            var multiMediaPickerService = new MultiMediaPickerService();
 
             CachedImageRenderer.Init();
             CachedImageRenderer.InitImageSourceHandler();
@@ -42,7 +44,7 @@ namespace XamarinCustomUI.iOS
             };
             ImageService.Instance.Initialize(config);
 
-            LoadApplication(new App());
+            LoadApplication(new App(multiMediaPickerService));
 
             return base.FinishedLaunching(app, options);
         }

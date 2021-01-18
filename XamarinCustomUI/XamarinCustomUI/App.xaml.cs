@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Threading;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinCustomUI.Helpers;
 
 namespace XamarinCustomUI
 {
@@ -12,11 +13,13 @@ namespace XamarinCustomUI
         public static double ScreenHeight;
         public static Theme AppTheme { get; set; }
 
-        public App()
+        public App(IMultiMediaPickerService multiMediaPickerService)
         {
             Thread.CurrentThread.CurrentUICulture = CultureInfo.InstalledUICulture;
 
             InitializeComponent();
+
+           // FlowListView.Init();
 
             MainPage = new NavigationPage(new MainPage());
         }
