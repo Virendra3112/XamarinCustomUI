@@ -46,15 +46,15 @@ namespace XamarinCustomUI.Droid.CustomRenderers
         {
             using (var ei = new ExifInterface(filePath))
             {
-                var orientation = (Android.Media.Orientation)ei.GetAttributeInt(ExifInterface.TagOrientation, (int)Android.Media.Orientation.Normal);
+                var orientation = (Orientation)ei.GetAttributeInt(ExifInterface.TagOrientation, (int)Orientation.Normal);
 
                 switch (orientation)
                 {
-                    case Android.Media.Orientation.Rotate90:
+                    case Orientation.Rotate90:
                         return 90;
-                    case Android.Media.Orientation.Rotate180:
+                    case Orientation.Rotate180:
                         return 180;
-                    case Android.Media.Orientation.Rotate270:
+                    case Orientation.Rotate270:
                         return 270;
                     default:
                         return 0;
