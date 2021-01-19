@@ -70,6 +70,7 @@
     <Compile Include="CustomRendrers\ThemeHelper.cs" />
     <Compile Include="Effects\iOSLongPressedEffect.cs" />
     <Compile Include="Effects\iOSSingleClickEffect.cs" />
+    <Compile Include="Helpers\NSDataStream.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
