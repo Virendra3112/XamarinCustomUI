@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -13,8 +12,10 @@ using GMImagePicker;
 using Photos;
 using UIKit;
 using XamarinCustomUI.Helpers;
+using XamarinCustomUI.iOS.CustomRendrers;
 using XamarinCustomUI.Models;
 
+[assembly: Xamarin.Forms.Dependency(typeof(MultiMediaPickerService))]
 namespace XamarinCustomUI.iOS.CustomRendrers
 {
     public class MultiMediaPickerService : IMultiMediaPickerService
