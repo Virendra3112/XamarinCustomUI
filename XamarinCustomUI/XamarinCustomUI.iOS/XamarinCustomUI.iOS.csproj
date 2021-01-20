@@ -180,4 +180,28 @@
   <ItemGroup>
     <BundleResource Include="Resources\delete.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\colors.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ticon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\undo.png" />
+  </ItemGroup>
 </Project>
