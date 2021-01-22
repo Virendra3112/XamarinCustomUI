@@ -16,5 +16,12 @@ namespace XamarinCustomUI.Views
         {
             InitializeComponent();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            previewImage.Source = "https://homepages.cae.wisc.edu/~ece533/images/fruits.png";
+        }
     }
 }

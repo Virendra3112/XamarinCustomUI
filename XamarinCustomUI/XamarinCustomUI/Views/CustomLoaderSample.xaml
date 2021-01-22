@@ -2,14 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              mc:Ignorable="d"
              x:Class="XamarinCustomUI.Views.CustomLoaderSample">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Image x:Name="previewImage"
+                   BackgroundColor="Red"
+                   Aspect="AspectFit" 
+                                HeightRequest="400" WidthRequest="400"
+                         >
+            </Image>
+
+            <!--<ff:CachedImage BackgroundColor="Pink" RetryCount="5" LoadingPlaceholder="splash" ErrorPlaceholder="icon"
+                   Aspect="AspectFit" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                                HeightRequest="400" WidthRequest="400"
+                          Source="https://homepages.cae.wisc.edu/~ece533/images/airplane.png"/>-->
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
