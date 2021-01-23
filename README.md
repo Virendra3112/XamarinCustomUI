@@ -15,6 +15,10 @@
 | 11.| Dark/Light Theme | :heavy_check_mark: Done |
 | 12.| Floating Tabs | :heavy_check_mark: Done |
 | 13. | Multi Image Picker  | :soon: |
-| 14. | Image Editor  | :soon: |
+| 14. | Custom Image Editor  | :soon: |
 | 15. | Custom Image Loader  | :soon: |
 | 16. | Custom GIF Loader  | :soon: |
+| 17. | User Profile UI  | :soon: |
+| 18. | Fingerprint auth custom UI  | :soon: |
+| 19. | Custom Charts  | :soon: |
+| 20. | Animated Splash  | :soon: |
