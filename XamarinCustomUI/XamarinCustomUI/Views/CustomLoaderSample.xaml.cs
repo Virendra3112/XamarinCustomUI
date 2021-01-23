@@ -10,13 +10,13 @@ namespace XamarinCustomUI.Views
     {
         private bool isBusy;
 
-        public bool IsBusy
+        public bool ShowLoader
         {
             get { return isBusy; }
             set
             {
                 isBusy = value;
-                OnPropertyChanged("IsBusy");
+                OnPropertyChanged("ShowLoader");
             }
         }
         public CustomLoaderSample()
@@ -27,7 +27,7 @@ namespace XamarinCustomUI.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            IsBusy = true;
+            ShowLoader = true;
 
         }
 
