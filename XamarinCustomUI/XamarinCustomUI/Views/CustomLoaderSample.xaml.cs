@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,8 +6,19 @@ using Xamarin.Forms.Xaml;
 namespace XamarinCustomUI.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CustomLoaderSample : ContentPage
+    public partial class CustomLoaderSample : ContentPage, INotifyPropertyChanged
     {
+        private bool isBusy;
+
+        public bool IsBusy
+        {
+            get { return isBusy; }
+            set
+            {
+                isBusy = value;
+                OnPropertyChanged("IsBusy");
+            }
+        }
         public CustomLoaderSample()
         {
             InitializeComponent();
@@ -20,8 +27,17 @@ namespace XamarinCustomUI.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            IsBusy = true;
 
-            previewImage.Source = "https://homepages.cae.wisc.edu/~ece533/images/fruits.png";
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
