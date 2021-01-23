@@ -14,3 +14,7 @@
 | 10.| Custom GalleryView | :heavy_check_mark: Done |
 | 11.| Dark/Light Theme | :heavy_check_mark: Done |
 | 12.| Floating Tabs | :heavy_check_mark: Done |
+| 13. | Multi Image Picker  | :soon: |
+| 14. | Image Editor  | :soon: |
+| 15. | Custom Image Loader  | :soon: |
+| 16. | Custom GIF Loader  | :soon: |
