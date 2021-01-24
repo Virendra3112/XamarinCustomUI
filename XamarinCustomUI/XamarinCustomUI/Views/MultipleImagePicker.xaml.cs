@@ -34,6 +34,7 @@ namespace XamarinCustomUI.Views
 
             try
             {
+                Media = new ObservableCollection<MediaFile>();
                 DependencyService.Get<IMultiMediaPickerService>().OnMediaPicked += (s, a) =>
                    {
                        Device.BeginInvokeOnMainThread(() =>
