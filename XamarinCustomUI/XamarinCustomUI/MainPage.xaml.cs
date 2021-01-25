@@ -77,6 +77,7 @@ namespace XamarinCustomUI
             //CategoryList.Add(new Item { Name = "XLabs Charts", Image = "icon.png" });
 
             CategoryList.Add(new Item { Name = "MultiImagePicker", Image = "icon.png" });
+
             CategoryList.Add(new Item { Name = "Custom Loader", Image = "icon.png" });
 
         }
