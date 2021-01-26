@@ -78,7 +78,10 @@ namespace XamarinCustomUI
 
             CategoryList.Add(new Item { Name = "MultiImagePicker", Image = "icon.png" });
 
-            CategoryList.Add(new Item { Name = "Custom Loader", Image = "icon.png" });
+            CategoryList.Add(new Item { Name = "Custom Image Loader", Image = "icon.png" });
+
+            CategoryList.Add(new Item { Name = "Custom GIF Loader", Image = "icon.png" });
+
 
         }
 
@@ -198,7 +201,12 @@ namespace XamarinCustomUI
 
                             break;
                         }
-                    case "Custom Loader":
+                    case "Custom Image Loader":
+                        {
+                            Navigation.PushAsync(new CustomLoaderSample());
+
+                            break;
+                        } case "Custom GIF Loader":
                         {
                             Navigation.PushAsync(new CustomLoaderSample());
 
