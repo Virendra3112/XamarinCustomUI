@@ -208,7 +208,7 @@ namespace XamarinCustomUI
                             break;
                         } case "Custom GIF Loader":
                         {
-                            Navigation.PushAsync(new CustomLoaderSample());
+                            Navigation.PushAsync(new CustomGIFLoaderSample());
 
                             break;
                         }

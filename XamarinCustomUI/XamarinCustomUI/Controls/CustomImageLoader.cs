@@ -18,7 +18,7 @@ namespace XamarinCustomUI.Controls
         public static BindableProperty IsRunningProperty = BindableProperty.Create(
             propertyName: nameof(IsRunning),
             returnType: typeof(bool),
-            declaringType: typeof(CustomLoader),
+            declaringType: typeof(CustomImageLoader),
             defaultValue: false);
 
         public bool IsRunning
@@ -30,7 +30,7 @@ namespace XamarinCustomUI.Controls
         public static BindableProperty RotationLenghtProperty = BindableProperty.Create(
             propertyName: nameof(RotationLenght),
             returnType: typeof(int),
-            declaringType: typeof(CustomLoader),
+            declaringType: typeof(CustomImageLoader),
             defaultValue: 2500);
 
         public int RotationLenght
@@ -42,7 +42,7 @@ namespace XamarinCustomUI.Controls
         public static BindableProperty EasingProperty = BindableProperty.Create(
             propertyName: nameof(Easing),
             returnType: typeof(Easing),
-            declaringType: typeof(CustomLoader),
+            declaringType: typeof(CustomImageLoader),
             defaultValue: Easing.CubicInOut);
 
         public Easing Easing
